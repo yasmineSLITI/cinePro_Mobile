@@ -38,6 +38,7 @@ public class ProductClientForm extends Form {
     public ProductClientForm(Produit product, Form previous) {
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
         this.getToolbar().setTitle(product.getDesignation());
+        setUIID("Activate");
         this.setLayout(BoxLayout.y());
 
         this.product = product;

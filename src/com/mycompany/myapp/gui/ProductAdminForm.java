@@ -36,6 +36,7 @@ public class ProductAdminForm extends Form {
     public ProductAdminForm(Produit product, Form previous) {
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
         this.getToolbar().setTitle(product.getDesignation());
+        setUIID("Activate");
         this.setLayout(BoxLayout.y());
    
 

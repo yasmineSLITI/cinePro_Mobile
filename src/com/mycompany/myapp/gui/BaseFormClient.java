@@ -56,6 +56,8 @@ public class BaseFormClient extends Form {
     protected void addSideMenu() {
         Toolbar tb = getToolbar();
         tb.setSafeArea(false);
+        setUIID("Activate");
+
         
         try {
             Image gameImage = Image.createImage("/profile.jpg");

@@ -36,6 +36,7 @@ public class AddProductForm extends Form {
     public AddProductForm(Form previous) {
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
         setTitle("Add Product");
+        setUIID("Activate");
         setLayout(BoxLayout.y());
         TextField tfName = new TextField("", "Designation Produit");
         TextField tfDes = new TextField("", "Description Produit");

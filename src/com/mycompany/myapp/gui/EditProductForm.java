@@ -26,6 +26,7 @@ public class EditProductForm extends Form {
     public EditProductForm(Produit product, Form previous) {
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
         setTitle("Edit Product");
+        setUIID("Activate");
         setLayout(BoxLayout.y());
         // this.setUIID("Activate");
         TextField tfName = new TextField("", "Designation Produit");

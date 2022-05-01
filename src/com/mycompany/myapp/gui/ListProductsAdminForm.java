@@ -41,6 +41,7 @@ public class ListProductsAdminForm extends BaseFormAdmin {
         });
 
         setTitle("Liste des produits");
+        setUIID("Activate");
 
         this.setScrollable(false);
         this.setLayout(new BorderLayout());

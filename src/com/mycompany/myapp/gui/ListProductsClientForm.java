@@ -43,6 +43,7 @@ public class ListProductsClientForm extends BaseFormClient {
         });
 
         setTitle("Liste des produits");
+        setUIID("Activate");
 
         this.setScrollable(false);
         this.setLayout(new BorderLayout());
@@ -120,7 +121,7 @@ public class ListProductsClientForm extends BaseFormClient {
             new ListProductsClientForm().show();
         });
         setTitle("Ma WishList");
-        //setUIID("Activate");
+        setUIID("Activate");
         for (Produit g : FollowedProducts) {
             this.add(this.addProductsHolder(g));
         }
