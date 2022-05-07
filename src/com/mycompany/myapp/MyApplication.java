@@ -14,8 +14,14 @@ import com.codename1.ui.Toolbar;
 import java.io.IOException;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.io.NetworkEvent;
+import com.mycompany.myapp.entities.Film;
+import com.mycompany.myapp.entities.Produit;
+import com.mycompany.myapp.gui.AddBilletForm;
+import com.mycompany.myapp.gui.AddProductForm;
 import com.mycompany.myapp.gui.ListProductsAdminForm;
 import com.mycompany.myapp.gui.ListProductsClientForm;
+import com.mycompany.myapp.gui.ProductAdminForm;
+import com.mycompany.myapp.gui.ProductClientForm;
 import com.mycompany.myapp.services.ServiceProducts;
 
 /**
@@ -55,7 +61,8 @@ public class MyApplication {
             current.show();
             return;
         }
-        new ListProductsClientForm().show();
+
+        
     }
 
     public void stop() {

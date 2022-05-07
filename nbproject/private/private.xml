@@ -4,12 +4,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/gui/BaseForm.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/utils/Statics.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/services/ServiceBillet.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/gui/validerBilletForm.java</file>
             <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/services/ServiceProducts.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/gui/ProductForm.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/gui/AddProductForm.java</file>
-            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/gui/ListProductsForm.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/gui/AddBilletForm.java</file>
+            <file>file:/C:/Users/Asus/Desktop/Mobile/CodenameOne/src/com/mycompany/myapp/gui/ProductAdminForm.java</file>
         </group>
     </open-files>
 </project-private>
