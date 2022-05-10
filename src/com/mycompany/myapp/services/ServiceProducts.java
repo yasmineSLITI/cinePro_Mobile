@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -33,6 +34,10 @@ public class ServiceProducts {
 
     public static ServiceProducts instance = null;
     public boolean resultOK;
+    public String produitEnStock_Count;
+    public String produitOutOfStock_Count;
+    public String produitMonthlySales_Count;
+    public String[] followings;
     private ConnectionRequest req;
 
     private ServiceProducts() {
@@ -216,4 +221,271 @@ public class ServiceProducts {
         NetworkManager.getInstance().addToQueueAndWait(req);
         return products;
     }
+
+    public String InStockProduit() {
+        String url = Statics.BASE_URL + "/stats/InStockProducts";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitEnStock_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitEnStock_Count;
+    }
+
+    public String OutOfStockProduit() {
+        String url = Statics.BASE_URL + "/stats/OutOfStockProducts";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitOutOfStock_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitOutOfStock_Count;
+    }
+
+    public String JanuarySales() {
+        String url = Statics.BASE_URL + "/stats/JanuarySales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String FebuarySales() {
+        String url = Statics.BASE_URL + "/stats/FebuarySales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String MarchSales() {
+        String url = Statics.BASE_URL + "/stats/MarchSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String AprilSales() {
+        String url = Statics.BASE_URL + "/stats/AprilSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String MaySales() {
+        String url = Statics.BASE_URL + "/stats/MaySales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String JuneSales() {
+        String url = Statics.BASE_URL + "/stats/JuneSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String JulySales() {
+        String url = Statics.BASE_URL + "/stats/JulySales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String AugustSales() {
+        String url = Statics.BASE_URL + "/stats/AugustSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String septemberSales() {
+        String url = Statics.BASE_URL + "/stats/SeptemberSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String OctoberSales() {
+        String url = Statics.BASE_URL + "/stats/OctoberSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String novemberSales() {
+        String url = Statics.BASE_URL + "/stats/novemberSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
+    public String decemberSales() {
+        String url = Statics.BASE_URL + "/stats/decemberSales";
+        req.removeAllArguments();
+        req.setUrl(url);
+        req.setPost(false);
+        req.setHttpMethod("GET");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                if (req.getResponseCode() == 200) {
+                    produitMonthlySales_Count = new String(req.getResponseData());
+                }
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return produitMonthlySales_Count;
+    }
+
 }

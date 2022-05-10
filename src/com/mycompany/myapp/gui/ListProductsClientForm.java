@@ -19,7 +19,9 @@ import com.codename1.ui.URLImage;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
+import com.mycompany.myapp.entities.Billet;
 import com.mycompany.myapp.entities.Produit;
+import com.mycompany.myapp.services.ServiceBillet;
 import com.mycompany.myapp.services.ServiceProducts;
 import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;
@@ -39,6 +41,7 @@ public class ListProductsClientForm extends BaseFormClient {
         getToolbar().addMaterialCommandToRightBar("", FontImage.MATERIAL_FAVORITE_OUTLINE, e -> {
             new ListProductsClientForm(ServiceProducts.getInstance().getAllFollowedProducts()).show();
         });
+
         getToolbar().addMaterialCommandToRightBar("", FontImage.MATERIAL_SHOPPING_CART, e -> {
         });
 
@@ -114,8 +117,8 @@ public class ListProductsClientForm extends BaseFormClient {
         }
         return ctn;
     }
-    
-     public ListProductsClientForm(ArrayList<Produit> FollowedProducts) {
+
+    public ListProductsClientForm(ArrayList<Produit> FollowedProducts) {
         super.addSideMenu();
         getToolbar().addMaterialCommandToRightBar("", FontImage.MATERIAL_FAVORITE, e -> {
             new ListProductsClientForm().show();

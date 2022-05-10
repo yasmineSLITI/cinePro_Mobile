@@ -91,6 +91,8 @@ public class ListProductsAdminForm extends BaseFormAdmin {
                 enc = EncodedImage.create("/spinner.png");
 
                 String url = "http://localhost/cinePro/public/uploads/" + c.getImage();
+               // String url = Statics​.BASE_URL + "/images/products/" + c.getImage();
+
 
                 System.out.println(url);
                 img = URLImage.createToStorage(enc, url, url, URLImage.RESIZE_SCALE);

@@ -14,8 +14,15 @@ import com.codename1.ui.Toolbar;
 import java.io.IOException;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.io.NetworkEvent;
+import com.mycompany.myapp.entities.Film;
+import com.mycompany.myapp.entities.Produit;
+import com.mycompany.myapp.gui.AddBilletForm;
+import com.mycompany.myapp.gui.AddProductForm;
+import com.mycompany.myapp.gui.ChartDemosForm;
 import com.mycompany.myapp.gui.ListProductsAdminForm;
 import com.mycompany.myapp.gui.ListProductsClientForm;
+import com.mycompany.myapp.gui.ProductAdminForm;
+import com.mycompany.myapp.gui.ProductClientForm;
 import com.mycompany.myapp.services.ServiceProducts;
 
 /**
@@ -55,7 +62,15 @@ public class MyApplication {
             current.show();
             return;
         }
-        new ListProductsClientForm().show();
+//        ChartDemosForm demos = new ChartDemosForm();
+//        current = demos;
+//        demos.show();  
+//        Film F= new Film("Interstellar","Science Fiction",false,"accepté","film.jpg", "testDescription", 156);
+//        new AddBilletForm(F).show();
+
+          new ListProductsAdminForm().show();
+//       new ListProductsClientForm().show();
+        
     }
 
     public void stop() {

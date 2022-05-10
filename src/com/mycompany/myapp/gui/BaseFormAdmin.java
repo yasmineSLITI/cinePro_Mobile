@@ -67,14 +67,14 @@ public class BaseFormAdmin extends Form {
 
         }
 
-        tb.addMaterialCommandToSideMenu("Dashboard", FontImage.MATERIAL_DASHBOARD, null);
+        tb.addMaterialCommandToSideMenu("Dashboard", FontImage.MATERIAL_DASHBOARD,  e -> new ChartDemosForm().show());
         tb.addMaterialCommandToSideMenu("Films", FontImage.MATERIAL_CAMERA, null);
         tb.addMaterialCommandToSideMenu("Compte", FontImage.MATERIAL_IMPORT_CONTACTS, null);
         tb.addMaterialCommandToSideMenu("Evénements", FontImage.MATERIAL_EVENT, null);
         tb.addMaterialCommandToSideMenu("Réservations", FontImage.MATERIAL_MEETING_ROOM, null);
         tb.addMaterialCommandToSideMenu("Salle", FontImage.MATERIAL_ROOM, null);
         tb.addMaterialCommandToSideMenu("Publications", FontImage.MATERIAL_PRINT, null);
-        tb.addMaterialCommandToSideMenu("Produits", FontImage.MATERIAL_SHOPPING_BAG, null);
+        tb.addMaterialCommandToSideMenu("Produits", FontImage.MATERIAL_SHOPPING_BAG, e -> new ListProductsAdminForm().show());
         tb.addMaterialCommandToSideMenu("Profile", FontImage.MATERIAL_SETTINGS, null);
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, null
         );

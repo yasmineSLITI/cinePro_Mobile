@@ -97,24 +97,9 @@ public class ProductAdminForm extends Form {
 
             descriptionContainer.add(descriptionTA);
             imageContainer.add(image);
-            Button btnCart = new Button("Add to Cart");
-            btnCart.addActionListener(
-                    new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-//                    Cart cart = new Cart();
-//                    cart.setProduct(product);
-//                    if (ServiceCart.getInstance().addCart(cart)) {
-//
-//                    } else {
-//                        Dialog.show("erreur", "connection Failed", new Command("ok"));
-//
-//                    }
-
-                }
-            }
-            );
-            this.addAll(imageContainer, tfName ,descriptionContainer, tfPrixAchatUnit, tfPrixVenteUnit, tfQuantityStocked, btnCart);
+            
+       
+            this.addAll(imageContainer, tfName ,descriptionContainer, tfPrixAchatUnit, tfPrixVenteUnit, tfQuantityStocked);
         } catch (IOException e) {
             System.err.println(e);
         }
