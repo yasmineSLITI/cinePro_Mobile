@@ -43,16 +43,10 @@ Form current;
         getToolbar().addCommandToSideMenu("Salles",null,new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-               new SalleListForm(current).show(); 
+               new ListSalleForm(current).show(); 
             }
         });
         getToolbar().addCommandToSideMenu("Evenments en attentes",null,new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-               new EvenementEnAtteneListForm(current).show(); 
-            }
-        });
-        getToolbar().addCommandToSideMenu("Evenements",null, e-> current.showBack());getToolbar().addCommandToSideMenu("Evenments en attentes",null,new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
                new EvenementEnAtteneListForm(current).show(); 
@@ -68,7 +62,13 @@ Form current;
         getToolbar().addCommandToRightBar("+",null,new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-               new AjouterSalleForm(current).show(); 
+               new AjouterEventForm(current).show(); 
+            }
+        });
+        getToolbar().addCommandToSideMenu("Stats",null,new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+               new StatsEventForm().createPieChartForm(current).show(); 
             }
         });
     }

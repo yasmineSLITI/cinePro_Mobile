@@ -61,7 +61,7 @@ public class ListSalleForm extends Form {
         getToolbar().addCommandToSideMenu("Stats",null,new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-               new Stats().createPieChartForm(current).show(); 
+               new SatsSalleForm().createPieChartForm(current).show(); 
             }
         });
        

@@ -11,7 +11,7 @@ package edu.CineProMobile.entites;
  */
 public class Evenement {
   private int idev  ;
-  private String etat;
+  private String etat= "En attente";
   private float montant;
   private int duree;
   private int progret = 0;
@@ -80,13 +80,11 @@ public class Evenement {
 
     @Override
     public String toString() {
-                return "Evenement{" + "idev=" + idev + ", etat=" + etat +  ", nomev=" + nomev + ", description=" + description + "}    \n";
+                return "Evenement{  nom de l'event =" + nomev +  ", etat d'acceptation =" + etat + ", description=" + description +
+                        " , progret " + progret+ ",montant de sponsoring demandé =  "+montant+ "}    \n";
 
     }
-    public String toString2() {
-                return nomev ;
-
-    }
+    
   
 
 }

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package edu.CineProMobile.gui;
 
 import com.codename1.charts.ChartComponent;
@@ -20,7 +16,7 @@ import edu.CineProMobile.services.ServiceSalle;
  *
  * @author user
  */
-public class Stats extends Form {
+public class SatsSalleForm extends Form {
 private DefaultRenderer buildCategoryRenderer(int[] colors) {
     DefaultRenderer renderer = new DefaultRenderer();
     renderer.setLabelsTextSize(15);
@@ -86,4 +82,5 @@ public Form createPieChartForm(Form prev) {
     return f;
 
 }
-}
+}    
+

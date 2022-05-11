@@ -48,11 +48,17 @@ public class ServiceEvenement {
         System.out.println(t);
         System.out.println("********");
         //String url = Statics.BASE_URL + "create?name=" + t.getName() + "&status=" + t.getStatus();
-        String url = Statics.BASE_URL + "/demanderEvent/reaJSON/"+id+"/new";
+        String url = Statics.BASE_URL + "demanderEvent/reaJSON/1/new";
 
         req.setUrl(url);
         req.setPost(false);
+        req.addArgument("idev",Integer.toString(t.getIdev()));
+        req.addArgument("etat", t.getEtat());
+        req.addArgument("montant", Float.toString( t.getMontant()));
+        req.addArgument("duree", Integer.toString(t.getDuree()));
+        req.addArgument("progret", Integer.toString(t.getProgret()));
         req.addArgument("nomev", t.getNomev());
+        req.addArgument("description", t.getDescription());
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -215,22 +221,22 @@ public class ServiceEvenement {
         NetworkManager.getInstance().addToQueueAndWait(req);
         return events;
     }
-public Evenement accepterEvent(int id){
-    Evenement t = new Evenement();
-    String url =Statics.BASE_URL+"refuserevenementJSON/"+id;
-    req.setUrl(url);
-//    req.addResponseListener(new ActionListener<NetworkEvent>() {
-//        @Override
-//        public void actionPerformed(NetworkEvent evt) {
-//            t = parseEvenementAccept(new String(req.getResponseData()));
-//            req.removeResponseListener(this);
-//        }
-//    });
-    InfiniteProgress prg = new InfiniteProgress();
-        Dialog diag = prg.showInfiniteBlocking();
-        req.setDisposeOnCompletion(diag);
-        NetworkManager.getInstance().addToQueueAndWait(req);
-        return t;
-}
+//public Evenement accepterEvent(int id){
+//    Evenement t = new Evenement();
+//    String url =Statics.BASE_URL+"refuserevenementJSON/"+id;
+//    req.setUrl(url);
+////    req.addResponseListener(new ActionListener<NetworkEvent>() {
+////        @Override
+////        public void actionPerformed(NetworkEvent evt) {
+////            t = parseEvenementAccept(new String(req.getResponseData()));
+////            req.removeResponseListener(this);
+////        }
+////    });
+//    InfiniteProgress prg = new InfiniteProgress();
+//        Dialog diag = prg.showInfiniteBlocking();
+//        req.setDisposeOnCompletion(diag);
+//        NetworkManager.getInstance().addToQueueAndWait(req);
+//        return t;
+//}
 
 }
