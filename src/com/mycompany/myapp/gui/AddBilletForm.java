@@ -26,6 +26,7 @@ import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
+import com.codename1.ui.util.UITimer;
 import com.mycompany.myapp.MyApplication;
 import com.mycompany.myapp.entities.Billet;
 import com.mycompany.myapp.entities.Film;
@@ -44,6 +45,14 @@ public class AddBilletForm extends Form {
     private Film film;
 
     public AddBilletForm(Film film) {
+        
+          
+        final UITimer uiTimer1 = new UITimer(new Runnable() {
+            public void run() {
+                ServiceBillet.getInstance().archiveBillet();
+            }
+        });
+        uiTimer1.schedule(2000, true , this);
         
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK,
                 null

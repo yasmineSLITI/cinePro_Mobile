@@ -18,6 +18,7 @@ import com.codename1.ui.URLImage;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
+import com.codename1.ui.util.UITimer;
 import com.mycompany.myapp.entities.Produit;
 import com.mycompany.myapp.services.ServiceProducts;
 import com.mycompany.myapp.utils.Statics;
@@ -32,9 +33,9 @@ import java.util.List;
 public class ListProductsAdminForm extends BaseFormAdmin {
 
     public ListProductsAdminForm() {
-
-        super.addSideMenu();
       
+        super.addSideMenu();
+
         getToolbar().addMaterialCommandToRightBar("", FontImage.MATERIAL_ADD, e -> {
             Form addForm = new AddProductForm(this);
             addForm.show();
@@ -42,7 +43,7 @@ public class ListProductsAdminForm extends BaseFormAdmin {
 
         setTitle("Liste des produits");
         setUIID("Activate");
-
+        
         this.setScrollable(false);
         this.setLayout(new BorderLayout());
         TextField searchBar = new TextField("", "Search");
@@ -91,8 +92,7 @@ public class ListProductsAdminForm extends BaseFormAdmin {
                 enc = EncodedImage.create("/spinner.png");
 
                 String url = "http://localhost/cinePro/public/uploads/" + c.getImage();
-               // String url = Statics​.BASE_URL + "/images/products/" + c.getImage();
-
+                // String url = Statics​.BASE_URL + "/images/products/" + c.getImage();
 
                 System.out.println(url);
                 img = URLImage.createToStorage(enc, url, url, URLImage.RESIZE_SCALE);

@@ -14,6 +14,8 @@ import com.codename1.ui.events.ActionListener;
 import com.mycompany.myapp.entities.Billet;
 import com.mycompany.myapp.entities.Produit;
 import com.mycompany.myapp.utils.Statics;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
@@ -93,6 +95,31 @@ public class ServiceBillet {
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
         return prices;
+    }
+       
+          public void archiveBillet() {
+        Timer timer = new Timer();
+        TimerTask task = getTask(1);
+        timer.schedule(task, 100);
+        String url = Statics.BASE_URL + "/billet/archiver";
+        req.setUrl(url);
+        NetworkManager.getInstance().addToQueueAndWait(req);   
+        task.cancel();
+    }
+
+    private TimerTask getTask(final int t) {
+        return new TimerTask() {
+
+            public void run() {
+                System.out.println("Billet archieve function started");
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                }
+                System.out.println("Billet archieve function finished");
+            }
+        };
+
     }
 
 }

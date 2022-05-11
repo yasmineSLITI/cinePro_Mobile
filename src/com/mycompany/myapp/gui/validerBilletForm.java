@@ -31,7 +31,7 @@ import java.io.IOException;
  *
  * @author Asus
  */
-public class validerBilletForm extends Form {
+public class validerBilletForm extends BaseFormClient {
 
     public Billet billet;
 
@@ -39,6 +39,7 @@ public class validerBilletForm extends Form {
 
         this.getToolbar().setTitle("Votre Billet");
         setUIID("Activate");
+        super.addSideMenu();
         this.setLayout(new FlowLayout(CENTER,CENTER));
 
         this.billet = billet;

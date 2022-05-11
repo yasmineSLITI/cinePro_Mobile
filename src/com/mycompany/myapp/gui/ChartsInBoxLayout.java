@@ -32,7 +32,7 @@ import java.util.List;
  *
  * @author Asus
  */
-public class ChartsInBoxLayout {
+public class ChartsInBoxLayout  {
    
     
     Font smallFont = Font.createSystemFont(Font.FACE_SYSTEM, Font.SIZE_SMALL, Font.STYLE_PLAIN);

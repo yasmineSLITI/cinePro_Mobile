@@ -18,15 +18,18 @@ import com.mycompany.myapp.entities.Produit;
 import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
  * @author Asus
  */
-public class ServiceProducts {
+public class ServiceProducts extends Timer {
 
     public ArrayList<Produit> products;
     public Produit produit;

@@ -18,96 +18,97 @@ import com.mycompany.myapp.services.BudgetPieChart;
 import com.mycompany.myapp.services.SalesStackedBarChart;
 import com.codename1.ui.Label;
 
-
 /**
  *
  * @author Asus
  */
-public class ChartDemosForm extends Form {
-    
+public class ChartDemosForm extends BaseFormAdmin {
+
     boolean drawOnMutableImages;
     List formMenu;
-    
+
     class ListOption {
+
         Class<AbstractDemoChart> chartClass;
         String name;
-        
-        ListOption(Class cls, String name){
+
+        ListOption(Class cls, String name) {
             this.chartClass = cls;
             this.name = name;
         }
-        
-        public String toString(){
+
+        public String toString() {
             return this.name;
         }
     }
-    
+
     ListOption[] options = new ListOption[]{
-   
         new ListOption(BudgetPieChart.class, "Stock Produit Pie Chart"),
         new ListOption(SalesStackedBarChart.class, "Vente Billets Bar Chart")
-      
+
     };
-    
+
     public ChartDemosForm() {
-        
-        super("Dashboard");
+
+//        super("Dashboard");
+        setTitle("Dashboard");
         setUIID("Activate");
-        
+        super.addSideMenu();
+
         formMenu = new List();
-        for ( int i=0; i<options.length; i++){
+        for (int i = 0; i < options.length; i++) {
             formMenu.addItem(options[i]);
         }
-        
-        formMenu.addActionListener(new ActionListener(){
+
+        formMenu.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent evt) {
                 int sel = formMenu.getCurrentSelected();
                 ListOption opt = options[sel];
                 Class cls = opt.chartClass;
-                if ( ChartsInBoxLayout.class.equals(cls) ){
+                if (ChartsInBoxLayout.class.equals(cls)) {
                     Form f = new ChartsInBoxLayout().getForm();
-                    Command cmd = new Command("Menu"){
+                    Command cmd = new Command("Menu") {
 
                         @Override
                         public void actionPerformed(ActionEvent evt) {
                             ChartDemosForm.this.showBack();
                         }
-                        
+
                     };
                     f.setBackCommand(cmd);
-                    
+
                     f.getStyle().setBgColor(0x0);
                     f.getStyle().setBgTransparency(0xff);
                     int numComponents = f.getComponentCount();
-                    for (int i=0; i<numComponents; i++) {
+                    for (int i = 0; i < numComponents; i++) {
                         f.getComponentAt(i).getStyle().setBgColor(0x0);
                         f.getComponentAt(i).getStyle().setBgTransparency(0xff);
                     }
-                    
+
                     f.show();
                     return;
                 }
                 try {
-                    AbstractDemoChart demo = (AbstractDemoChart)cls.newInstance();
+                    AbstractDemoChart demo = (AbstractDemoChart) cls.newInstance();
                     demo.setDrawOnMutableImage(drawOnMutableImages);
                     Form intent = demo.execute();
-                    if ( "".equals(intent.getTitle())){
+                    if ("".equals(intent.getTitle())) {
                         intent.setTitle(demo.getName());
                     }
-                    Command cmd = new Command("Menu"){
+                    Command cmd = new Command("Menu") {
 
                         @Override
                         public void actionPerformed(ActionEvent evt) {
                             ChartDemosForm.this.showBack();
                         }
-                        
+
                     };
                     intent.setBackCommand(cmd);
                     intent.getStyle().setBgColor(0x0);
                     intent.getStyle().setBgTransparency(0xff);
                     int numComponents = intent.getComponentCount();
-                    for (int i=0; i<numComponents; i++) {
+                    for (int i = 0; i < numComponents; i++) {
                         intent.getComponentAt(i).getStyle().setBgColor(0x0);
                         intent.getComponentAt(i).getStyle().setBgTransparency(0xff);
                     }
@@ -118,18 +119,13 @@ public class ChartDemosForm extends Form {
                     Log.e(ex);
                 }
             }
-            
-        });
-        
-        setLayout(new BorderLayout());
-        
-     
-     
-        addComponent(BorderLayout.CENTER, formMenu);
-        
 
-        
+        });
+
+        setLayout(new BorderLayout());
+
+        addComponent(BorderLayout.CENTER, formMenu);
+
     }
-    
-    
+
 }
